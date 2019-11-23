@@ -1,0 +1,28 @@
+import turtle
+
+def pattern(t, sz):
+    """makes basic pattern"""
+    t.right(90)
+    t.forward(sz)
+
+def spiral(t, sz, n):
+    """Creates growing spiral"""
+    for i in range(n):
+        pattern(t, sz)
+        sz += 5
+        t.left(1)
+
+mb = turtle.Screen()
+mb.bgcolor('lightgreen')
+mb.title('Pretty Pattern')
+
+mitch = turtle.Turtle()
+mitch.pensize(4)
+mitch.color('blue')
+mitch.speed(0)
+
+spiral(mitch, 2, 103)
+
+mb.mainloop()
+
+
