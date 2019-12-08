@@ -1,0 +1,31 @@
+import turtle
+
+
+def koch(t, x):
+    if x < 10:
+        t.fd(x)
+        return
+    length = x / 3
+    koch(t, length)
+    t.lt(60)
+    koch(t, length)
+    t.rt(120)
+    koch(t, length)
+    t.lt(60)
+    koch(t, length)
+
+
+def snowflake(t, x):
+    for i in range(3):
+        koch(t, x)
+        t.rt(120)
+
+
+
+bm = turtle.Screen()
+bro = turtle.Turtle()
+
+
+snowflake(bro, 200)
+
+turtle.mainloop()
