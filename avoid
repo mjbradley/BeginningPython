@@ -1,0 +1,20 @@
+def avoids(word, forbidden):
+    """Takes a word and a string of forbidden letters. Returns True if forbidden letters
+     are not used in the word.
+    """
+    for letter in forb:
+        if letter in word:
+            return False
+    return True
+
+# Loops through words.txt for words that do not contain words with the forbidden letters from inout.
+
+forb = input("Enter forbidden letters here> ")
+fin = open('words.txt','r')
+count = 0
+for word in fin:
+    if avoids(word.strip(), forb):
+        count += 1
+
+print('There are {0} words without the letters {1} in them!'.format(count,forb))
+
